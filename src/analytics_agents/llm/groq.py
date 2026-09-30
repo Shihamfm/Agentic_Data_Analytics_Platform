@@ -71,7 +71,12 @@ class GroqProvider(LLMProvider):
                 },
             ],
             response_format={
-                "type": "json_object"
+                "type": "json_schema",
+                "json_schema": {
+                    "name": response_model.__name__,
+                    "strict": True,
+                    "schema": response_model.model_json_schema(),
+                },
             },
         )
 
