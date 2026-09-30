@@ -1,3 +1,8 @@
+langgraph
+langchain
+groq
+langchain-community
+
 pydantic>=2.6.0
 pydantic-settings>=2.2.0
 fastapi>=0.104.0
