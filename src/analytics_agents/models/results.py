@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 class DataRequirement(BaseModel):
     table: str
@@ -17,7 +17,11 @@ class DiscoveryResult(BaseModel):
 
 class SQLResult(BaseModel):
     sql: str
-    explanation: str | None = None
+    explanation: str | None
+    tables_used: list[str]
+    metrics_used: list[str]
+    dimensions_used: list[str]
+    model_config = ConfigDict(extra="forbid")
 
 class SQLValidationResult(BaseModel):
     approved: bool
