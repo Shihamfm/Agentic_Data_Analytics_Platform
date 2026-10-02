@@ -12,10 +12,13 @@ class Settings(BaseSettings):
     groq_api_key: str | None = None
 
 
-    # Databricks
-    databricks_server_hostname: str | None = None
-    databricks_http_path: str | None = None
-    databricks_access_token: str | None = None
+    # POSTGRES
+    postgres_host: str | None = None
+    postgres_port: str | None = None
+    postgres_database: str | None = None
+    postgres_user: str | None = None
+    postgres_password: str | None = None
+    postgres_sslmode: str | None = None
 
     model_config = SettingsConfigDict(
         env_file=".env",
