@@ -52,6 +52,7 @@ class VisualizationSpec(BaseModel):
     x_column: str
     y_columns: list[str]
     description: str | None = None
+    orientation: str = "vertical"
 
 
 class VisualizationResult(BaseModel):
